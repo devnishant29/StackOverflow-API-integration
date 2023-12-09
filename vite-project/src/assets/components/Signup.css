@@ -1,0 +1,14 @@
+/* SignUp.css */
+
+.signup-form {
+  width: 400px; /* Adjust the width as needed */
+  margin: auto;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
