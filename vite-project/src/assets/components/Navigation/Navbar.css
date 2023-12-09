@@ -1,4 +1,12 @@
-.Navigation {
-  /* position: absolute;
-  margin-top: -350px; */
+.navbar-nav {
+  display: flex;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: center!important;
 }

@@ -19,3 +19,14 @@
   margin-top: -50rem;
   
 }
+.mb-3 a{
+  text-decoration: none;
+
+}
+.mb-3 a::before{
+  content: " ";
+}
+button{
+  margin: 0 5px 0 5px;
+  width: 150px;
+}

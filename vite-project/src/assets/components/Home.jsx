@@ -14,7 +14,7 @@ const HomePage = () => {
   const [response, setResponse] = useState(false);
   const [output, setOutput] = useState({});
 
-  
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,22 +33,26 @@ const HomePage = () => {
       }
     } else {
       try {
+        setLoading(true);
         const result = await axios.get(
           `https://api.stackexchange.com/2.3/search?order=asc&sort=votes&intitle=${encodedValue}&site=stackoverflow`
         );
         setResponse(true);
         setOutput(result.data.items);
+        setLoading(false);
 
         if (result.data.items && result.data.items.length > 0) {
           const postData = {
-            question: input
+            question: input,
           };
-  
+
           // Make a POST request to another API
-          const postResponse = await axios.post(`${url}history/addHistory?tempid=${storedUserName}`, postData);
+          const postResponse = await axios.post(
+            `${url}history/addHistory?tempid=${storedUserName}`,
+            postData
+          );
           console.log("POST response from another API:", postResponse.data);
         }
-
       } catch (error) {
         console.error(error);
         setResponse(true);
@@ -64,7 +68,7 @@ const HomePage = () => {
           <label htmlFor="input" className="form-label">
             Enter Your Question
           </label>
-          <NavLink to={'/history'}>History</NavLink>
+          <NavLink to={"/history"}>History</NavLink>
           <textarea
             className="form-control question_area"
             type="text"
@@ -94,6 +98,11 @@ const HomePage = () => {
           </button>
         </div>
       </form>
+      <div>
+        {loading && (
+          <div className="loading-circle">Loading...</div>
+        )}
+      </div>
       <div>
         {response && (
           <div>
