@@ -10,3 +10,25 @@
 .navbar-expand-lg .navbar-collapse {
   justify-content: center!important;
 }
+
+.user-icon{
+  width: 30px;
+  position: relative;
+  margin-top: -50rem;
+  height: 30px;
+  background-color: #007bff; /* You can customize the background color */
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 16px; /* You can adjust the font size */
+}
+
+#userDropdown {
+  position: relative;
+  margin-top: -50rem;
+  
+}

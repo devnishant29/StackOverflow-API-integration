@@ -62,7 +62,7 @@ const Navbar = () => {
             </li>
             {username !== "" && (
               <li className="nav-item">
-                <a className="nav-link" href="/history">
+                <a className="nav-link" href="/history" target="_blank">
                   History
                 </a>
               </li>
