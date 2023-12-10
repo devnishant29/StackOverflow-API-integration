@@ -103,7 +103,7 @@ const SignUp = () => {
           />
         </div>
         <button
-          className="btn btn-primary"
+          className="signup"
           onClick={handleSignUp}
           data-bs-toggle="tooltip"
           data-bs-placement="bottom"

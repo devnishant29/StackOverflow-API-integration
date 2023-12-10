@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import url from "../../details"
 import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 const Login = () => {
 
@@ -61,8 +62,8 @@ const Login = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <div className="card p-4 shadow" style={{ width: '500px', height: '400px' }}>
+    <div className="container mt-5 login-container">
+      <div className="card p-4 shadow login-form" style={{ width: '500px', height: '400px' }}>
         <h2 className="mb-4">Login</h2>
         <div className="mb-3">
           <label className="form-label">Email:</label>
@@ -86,7 +87,7 @@ const Login = () => {
         </div>
         {loginError && <div className="alert alert-danger">{loginError}</div>}
         <button
-          className="btn btn-primary"
+          className="btn btn-primary login"
           onClick={handleLogin}
           data-bs-toggle="tooltip"
           data-bs-placement="bottom"

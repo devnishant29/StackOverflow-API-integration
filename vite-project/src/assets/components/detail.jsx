@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import "./detail.css"
 
 import axios from "axios";
 const detail = () => {
@@ -28,32 +29,39 @@ const detail = () => {
     <div>
       <div>
         {!loading && (
-          <div>
+          <div >
             <h2>Output:</h2>
             <ul className="list-group">
               {output?.slice(0, 10).map((item, index) => (
-                <li key={index} className="list-group-item">
-                  <p>
-                    {item.title}
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      link
-                    </a>
-                  </p>
-                  <ul>
-                    <p>Tag:</p>
-                {item.tags.map((tag, idx) => (
-                  <li key={idx}>
-                    <p>{tag}</p>
+                <><div className="div-item">
+                  <li key={index} className="list-group-item">
+                    <p className="detail-title">
+                      {item.title}
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        link
+                      </a>
+                    </p>
+                    
+                    <div className="mytag">
+                    <ul className="Tag">
+                      
+                      {item.tags.map((tag, idx) => (
+                        <li key={idx} id="Tag">
+                          <p>{tag}</p>
+                        </li>
+                        
+                      ))}
+                    </ul>
+                    </div>
                   </li>
-                ))}
-              </ul>
-               
-                </li>
+
+                </div><hr /></>
               ))}
+              
             </ul>
           </div>
         )}

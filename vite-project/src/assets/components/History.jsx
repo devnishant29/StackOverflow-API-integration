@@ -59,19 +59,19 @@ const HistoryPage = () => {
   return (
     <div className="container mt-5">
       <h1>History</h1>
-      <ul className="list-group">
+      <ul className="list-group l-group">
         {historyData.map((item) => (
-          <li
+          <><li id="lgi"
             key={item._id}
             className={`list-group-item ${selectedItem === item._id ? "active" : ""}`}
             onClick={() => {
               setSelectedItem(item._id);
               handleClick(item.question);
 
-            }}
+            } }
           >
             {item.question}
-          </li>
+          </li><hr /></>
         ))}
       </ul>
     </div>

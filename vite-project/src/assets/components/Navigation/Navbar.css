@@ -1,8 +1,25 @@
+
 .navbar-nav {
   display: flex;
   width: 100%;
 }
 
+.Navigation{
+  color: #2D9596;
+}
+
+.mynav{
+  
+  color: #2D9596;
+  border-radius: 20px;
+}
+
+#mysearch1{
+  border-radius: 100px;
+}
+#mysearch2{
+  border-radius: 100px;
+}
 .form {
   display: flex;
 }
@@ -32,3 +49,4 @@
   margin-top: -50rem;
   
 }
+

@@ -1,0 +1,66 @@
+#root{
+    background-color:white ;
+}
+.detail-title{
+    padding-left: 40px;
+    float: left;
+    font-size: large;
+    
+}
+
+
+
+.div-item{
+    opacity: 0.9;
+    padding: 13px;
+    border-radius: 20px;
+    background-color:rgba(222, 215, 215, 0.495);
+}
+
+
+.list-group-item {
+    background-color:rgba(222, 215, 215,0);
+    float: left;
+    border: none;
+    border-radius: 0px;
+}
+
+#lgi:hover{
+color: blue;
+cursor: pointer;
+}
+
+.l-group{
+background-color: rgba(222, 215, 215, 0.495);
+}
+
+.Tag {
+    list-style: none; /* Remove default bullet points */
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    margin:2px 0 15px;
+   
+  }
+
+#Tag{
+    float: right;
+    margin: 0 7px;
+    background-color: #d1daee;
+    padding:11px 28px;
+    padding-bottom: 0px;
+    border-radius: 15px;
+    border-style: dashed;
+    font-size: large;
+}  
+
+/* .mytag{
+    float: left;  
+} */
+
+hr {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    width: 100%;
+  }

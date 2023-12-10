@@ -26,10 +26,11 @@ const Navbar = () => {
 
   return (
     <div className="Navigation">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="mynav navbar navbar-expand-lg navbar-light bg-light">
         <div className="d-flex justify-content-end align-items-center mb-3">
-          <div className="user-icon">{userInitials}</div>
-          <Dropdown>
+          <div >{userInitials}</div>
+          <div >{username}</div>
+          {/* <Dropdown>
             <Dropdown.Toggle variant="light" id="userDropdown">
               {username || "User"}{" "}
             </Dropdown.Toggle>
@@ -39,7 +40,7 @@ const Navbar = () => {
               <Dropdown.Divider />
               <Dropdown.Item href="#logout">Logout</Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
+          </Dropdown> */}
         </div>
         <button
           className="navbar-toggler"
@@ -70,6 +71,7 @@ const Navbar = () => {
           </ul>
           <form className="form my-2 my-lg-0">
             <input
+              id="mysearch1"
               className="form-control mr-sm-2"
               type="search"
               placeholder="Search"
@@ -78,6 +80,7 @@ const Navbar = () => {
             <button
               className="btn btn-outline-success my-2 my-sm-0"
               type="submit"
+              id="mysearch2"
             >
               Search
             </button>

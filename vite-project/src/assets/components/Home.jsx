@@ -68,7 +68,7 @@ const HomePage = () => {
           <label htmlFor="input" className="form-label">
             Enter Your Question
           </label>
-          <NavLink to={"/history"}>History</NavLink>
+          
           <textarea
             className="form-control question_area"
             type="text"
@@ -110,7 +110,7 @@ const HomePage = () => {
             <ul className="list-group">
               {output?.slice(0, 10).map((item, index) => (
                 <li key={index} className="list-group-item">
-                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <a href={item.link} rel="noopener noreferrer">
                     {item.link}
                   </a>
                 </li>

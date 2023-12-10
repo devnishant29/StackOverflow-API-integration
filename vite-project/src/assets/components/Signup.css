@@ -1,8 +1,9 @@
 /* SignUp.css */
 
 .signup-form {
+  background-color: rgb(163 157 157 / 50%);
   width: 400px; /* Adjust the width as needed */
-  margin: auto;
+  margin-left: 360px;
   opacity: 0;
   animation: fadeIn 0.5s forwards;
 }
@@ -11,4 +12,28 @@
   to {
     opacity: 1;
   }
+}
+
+.signup-form .form-label{
+  float: left;
+}
+
+.signup {
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.signup:hover {
+  background-color: #f1f1f1; /* Slightly lighter background on hover */
+}
+
+.container {
+  margin-left: 10%;
+ 
 }
