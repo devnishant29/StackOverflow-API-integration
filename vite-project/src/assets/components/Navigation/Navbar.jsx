@@ -28,8 +28,8 @@ const Navbar = () => {
     <div className="Navigation">
       <nav className="mynav navbar navbar-expand-lg navbar-light bg-light">
         <div className="d-flex justify-content-end align-items-center mb-3">
-          <div >{userInitials}</div>
-          <div >{username}</div>
+          <div className="myname">{userInitials}</div>
+          {/* <div >{username}</div> */}
           {/* <Dropdown>
             <Dropdown.Toggle variant="light" id="userDropdown">
               {username || "User"}{" "}

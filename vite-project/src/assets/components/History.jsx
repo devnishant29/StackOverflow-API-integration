@@ -58,7 +58,7 @@ const HistoryPage = () => {
 
   return (
     <div className="container mt-5">
-      <h1>History</h1>
+      <h1>History </h1>
       <ul className="list-group l-group">
         {historyData.map((item) => (
           <><li id="lgi"

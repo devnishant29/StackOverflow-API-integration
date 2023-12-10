@@ -21,10 +21,41 @@ const HomePage = () => {
     const encodedValue = encodeURIComponent(input);
 
     if (buttonState === 1) {
+      // try {
+      //   // console.log("GET response from Stack Overflow API:", "111111/////");
+      //   // const result = await axios.post("/chatgpt", { prompt: input });
+      //   // setOutput(result.data.text);
+
+        
+        
+      // }
       try {
-        const result = await axios.post("/chatgpt", { prompt: input });
-        setOutput(result.data.text);
-      } catch (error) {
+        console.log("GET response from Stack Overflow API:", "111111/////");
+        setLoading(true);
+        const result = await axios.get(
+          `https://api.stackexchange.com/2.3/search?order=asc&sort=votes&intitle=${encodedValue}&site=stackoverflow`
+        );
+        console.log("GET response from Stack Overflow API:", "result.data");
+        setResponse(true);
+
+        setOutput(result.data.items);
+        setLoading(false);
+
+        if (result.data.items && result.data.items.length > 0) {
+          const postData = {
+            question: input,
+          };
+
+          // Make a POST request to another API
+          const postResponse = await axios.post(
+            `${url}history/addHistory?tempid=${storedUserName}`,
+            postData
+          );
+          console.log("POST response from another API:", postResponse.data);
+        }
+      }
+      
+      catch (error) {
         console.error(error);
         setResponse(true);
         setOutput(
@@ -32,12 +63,16 @@ const HomePage = () => {
         );
       }
     } else {
+      // console.log("GET response from Stack Overflow API:", "111111/////");
       try {
+        console.log("GET response from Stack Overflow API:", "111111/////");
         setLoading(true);
         const result = await axios.get(
           `https://api.stackexchange.com/2.3/search?order=asc&sort=votes&intitle=${encodedValue}&site=stackoverflow`
         );
+        console.log("GET response from Stack Overflow API:", "result.data");
         setResponse(true);
+
         setOutput(result.data.items);
         setLoading(false);
 
@@ -62,7 +97,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 mycontainer">
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="input" className="form-label">
@@ -78,7 +113,7 @@ const HomePage = () => {
           />
         </div>
         <div className="mb-3 buttons">
-          <button
+          {/* <button
             className="btn btn-primary"
             onClick={() => {
               setButtonState(1);
@@ -86,7 +121,7 @@ const HomePage = () => {
             type="submit"
           >
             Chat GPT
-          </button>
+          </button> */}
           <button
             className="btn btn-secondary"
             onClick={() => {
@@ -106,11 +141,12 @@ const HomePage = () => {
       <div>
         {response && (
           <div>
-            <h2>Output:</h2>
-            <ul className="list-group">
-              {output?.slice(0, 10).map((item, index) => (
+            <h2>Related Posts:</h2>
+            <ul className="list-group lg">
+              {output.map((item, index) => (
                 <li key={index} className="list-group-item">
-                  <a href={item.link} rel="noopener noreferrer">
+                  <span className="myindex">{index+1} | &nbsp;</span>
+                  <a href={item.link} rel="link">
                     {item.link}
                   </a>
                 </li>

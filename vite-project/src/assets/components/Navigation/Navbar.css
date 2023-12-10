@@ -8,6 +8,19 @@
   color: #2D9596;
 }
 
+.myname{
+    margin-top: 16px;
+    margin-right: 5px;
+    margin-inline: 20px;
+    font-family: sans-serif;
+    font-size: 16px;
+    padding: 10px 19px;
+    border: 1px solid black;
+    border-radius: 80px;
+    background-color: bisque;
+    color: brown;
+}
+
 .mynav{
   
   color: #2D9596;
